@@ -78,9 +78,10 @@ class Scrop < Formula
     # building opencv-python-headless from sdist is impractical — it
     # would compile OpenCV from source).
     pip_install = [
-      py, "-m", "pip", "install",
+      py, "-m", "pip",
       "--python=#{libexec}/bin/python",
       "--disable-pip-version-check",
+      "install",
       "--no-deps"
     ]
 
