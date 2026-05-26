@@ -3,16 +3,14 @@ class Scrop < Formula
 
   desc "Crop sub-images (photos, sticky notes, receipts) out of a scanned composite image"
   homepage "https://github.com/dfla-me/scrop"
-  url "https://github.com/dfla-me/scrop/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "ac19bf45210efa5a92b177edf4d9d6e418bdb55edbdd512fe3f37ba2da3a9664"
+  url "https://github.com/dfla-me/scrop/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "78efbc743aa19701dda54b37db916dcd71b1a872be2b38ef7cbd71a3639f8074"
   license "MIT"
 
-  depends_on "numpy"
-  depends_on "opencv"
   depends_on "python@3.14"
 
   def install
-    venv = virtualenv_create(libexec, "python3.14", system_site_packages: true)
+    venv = virtualenv_create(libexec, "python3.14")
     venv.pip_install_and_link buildpath
   end
 
