@@ -85,9 +85,15 @@ class Scrop < Formula
       "--no-deps"
     ]
 
-    # Install each pre-fetched wheel directly from Homebrew's download cache.
+    # Install each pre-fetched wheel. Homebrew caches downloads as
+    # `<sha>--<original-name>.whl`, but pip's wheel filename parser splits on
+    # "-" and rejects the SHA-prefixed form. Copy each wheel into the build
+    # directory with its original PyPI filename first.
     resources.each do |r|
-      system(*pip_install, r.cached_download.to_s)
+      wheel_name = r.cached_download.basename.to_s.sub(/\A[a-f0-9]+--/, "")
+      wheel_path = buildpath/wheel_name
+      cp r.cached_download, wheel_path
+      system(*pip_install, wheel_path.to_s)
     end
 
     # Install scrop itself from the source tree.
