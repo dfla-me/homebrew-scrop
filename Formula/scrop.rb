@@ -9,10 +9,10 @@ class Scrop < Formula
 
   depends_on "numpy"
   depends_on "opencv"
-  depends_on "python@3.13"
+  depends_on "python@3.14"
 
   def install
-    venv = virtualenv_create(libexec, "python3.13", system_site_packages: true)
+    venv = virtualenv_create(libexec, "python3.14", system_site_packages: true)
     venv.pip_install_and_link buildpath
   end
 
