@@ -1,8 +1,8 @@
 class Scrop < Formula
   desc "Crop sub-images (photos, sticky notes, receipts) out of a scanned composite image"
   homepage "https://github.com/dfla-me/scrop"
-  url "https://github.com/dfla-me/scrop/archive/refs/tags/v0.2.3.tar.gz"
-  sha256 "d2f67f19018d87aaecc3e415e3caf2111485cddf9883af52ae15d2e8bd69e071"
+  url "https://github.com/dfla-me/scrop/archive/refs/tags/v0.2.4.tar.gz"
+  sha256 "fc799ffef7c79a74c5b5b097a45c22f9c5e0bd7f2dbf8b54d1dd9ef7d3dd47ec"
   license "MIT"
 
   depends_on "python@3.14"
